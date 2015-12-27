@@ -8,13 +8,15 @@
 		<link rel="stylesheet" href="css/responsiveslides.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/responsiveslides.min.js"></script>
+		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src = "cwApp.js"> </script>
 		  <script>
 		    // You can also use "$(window).load(function() {"
 			    $(function () {
 			
 			      // Slideshow 1
 			      $("#slider1").responsiveSlides({
-			        
+		
 			        speed: 600
 			      });
 			});
@@ -35,8 +37,6 @@
 				<div class="top-nav">
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="ClientList.html">Client List</a></li>
-						<li><a href="MedicalActs.html">Medical Acts</a></li>
 						<li><a style="cursor: pointer;" ng-click="loggedIn=false">Log out</a></li>
 					</ul>					
 				</div>
@@ -58,41 +58,51 @@
 					</div>
 					<!--End-image-slider---->
 		    <div class="clear"> </div>
-		    <div class="content-grids">
+		    <div class="content-grids" >
 		    	<div class="wrap">
 		    	<div class="section group">
-								
 				<div class="listview_1_of_3 images_1_of_3">
 					<div class="listimg listimg_1_of_2">
-						  <img src="images/grid-img2.png">
+						  <img src="images/grid-img1.png">
 					</div>
-					<div class="text list_1_of_2">
 					
-						  <div class ="button"><span> <a href="ClientList.html"><h3>Client List </h3></a></span>
-						  <p>Need more info?</p>
-						  <div class="button"><span><a href="#">View More</a></span></div>
-				     </div>
-				</div>
-				</div>
-				
-				<div class="listview_1_of_3 images_1_of_3">
-					<div class="listimg listimg_1_of_2">
-						  <img src="images/grid-img3.png">
+					<div class="text list_1_of_2">
+						<div class="form-bottom" ng-app="cwApp"
+          		data-ng-controller="loginCtrl"
+          		ng-init="cwSwitch=false">
+				<form name="form" ng-submit="login()" role="form" class="login-form">
+                  <div class="form-group">
+                    <label class="sr-only" for="form-username">Username</label>
+                    <input type="text" class="form-control" id="InputUser" placeholder="Username" name="username" ng-model="username" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="form-password">Password</label>
+                    <input type="password" class="form-control" id="InputPassword" placeholder="Password" name="password" ng-model="password" required>
+                  </div>
+				  <div ng-show="invalidLogin" style="color:#a94442">
+					<center><b>The information provided was not valid!</b></center>
+				  </div>
+                  <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Log in!</button>
+
+						  
+						  <center><div class="button"><span><a href="#"><h6>Register?</h6></a></span></div>
+						  <center><div class="button"><span><a href="#"><h6>Forgot Password?</h6></a></span></div>
 					</div>
-					<div class="text list_1_of_2">
-					
-						  <div class ="button"><span> <a href="MedicalActs.html"><h3>Medical Acts</h3></a></span>
-						  <p>Need More info?</p>
-						  <div class="button"><span><a href="#">View More</a></span></div>
-				    </div>
 				</div>				
+							
 			</div>
 		    </div>
 		   </div>
 		   
+		   
+	
+		   
+		   
+		   
+		   
 		   <div class="clear"> </div>
 		   <div class="footer">
-		   	<div class="wrap">
+		   	 <div class="wrap">
 		   	<div class="footer-right">
 		   		<p>&copy; 2015 InSure. All Rights Reserved </p>
 		   	</div>
@@ -100,9 +110,6 @@
 		   </div>
 		   </div>
 		<!--end-wrap-->
-		
-		<script src="/js/bl.js"></script>
-		<script src="/js/app.js"></script>
 	</body>
 </html>
 

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>InSure </title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href='//fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+		<script src="js/myApp.js"></script>
+		<script src="js/patientController.js"></script>
+	
+	</head>	
+	
+	<body>
+		<!--start-wrap-->
+			<!--start-header-->
+			<div class="header">
+				<div class="wrap">
+				<!--start-logo-->
+				<div class="logo">
+					<a href="index.html"><img src="C:\Dados\SISE 2015\Computacao Web\Projecto\cw\images\logotipo.png" title="logo" /></a>
+				</div>
+				<!--end-logo-->
+				<!--start-top-nav-->
+				<div class="top-nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="ClientList.html">Client List</a></li>
+						<li><a>Welcome Dr.{{doctorName}}</a></li>
+						<li><a style="cursor: pointer;" ng-click="loggedIn=false">Log out</a></li>
+						<li class="active"><a href="MedicalActs.html.html">Medical Act</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<!--end-top-nav-->
+			</div>
+			<!--end-header-->
+	<div style="margin-top:100px" ng-controller="patientCtrl">
+    <table class="table">
+		<tr>
+			<th style="width:25%">Patient ID</th>
+			<th style="width:25%">Name</th>
+			<th style="width:25%">Policy Type</th>
+			<th style="width:25%">Policy No</th>
+		</tr>
+		<tr>
+			<td style="width:25%">{{patient.patID}}</td>
+			<td style="width:25%">{{patient.name}}</td>
+			<td style="width:25%">{{patient.policy_type}}</td>
+			<td style="width:25%">{{patient.policy_number}}</td>
+		</tr>
+
+	</table>
+	<table class="table">
+			<tr>
+				<th style="width:25%">Date</th>
+				<th style="width:25%">Type</th>
+				<th style="width:25%">Cost</th>
+				<th style="width:25%">Reimbursement %</th>
+			</tr>
+			<tr ng-repeat="report in reports">
+				<td style="width:25%">{{report.date}}</td>
+				<td style="width:25%">{{findAct(report.actID).name}}</td>
+				<td style="width:25%">{{findAct(report.actID).cost}}</td>
+				<td style="width:25%">{{findActReimbursement(report.actID)}}</td>
+			</tr>
+
+		</table>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+
+    <div class="modal-content" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div>
+          <table style="width:100%; height:5%">
+            <tr style="height:5%">
+              <td style="height:80px; text-align: left">
+                <div align="left; height:20%">
+                  <a href="www.Insure.com">
+                    <img src="http://tarponspineandmedical.com/wp-content/uploads/2014/10/icon.png" style="width:30px;height:30px"></a>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/contact-icon.png" style="width:60px;height:60px">
+            <br></br>
+            <a>NOME DO PACIENTE</a>
+          </div>
+          <div class="modal-body">
+          </table style="width:100%">
+        </br>
+      </br>
+      <tr>
+        <div>
+          <td style="width:40%; text-align: left">
+            <div class="col-sm-6 col-sm-offset-0 form-box">
+              <div class="form-bottom" style="width:100%">
+                <table ng-controller="coursesCtrl">
+                  <tr data-ng-repeat="c in courses | orderBy: 'abbrev'">
+                    <br></br>
+                    <td style="color:white">
+                      MEDICAL ACT
+                    </td>
+                    <td style="color:white">
+                      TYPE
+                    </td>
+                  </tr>
+                </table>
+
+              </div>
+            </div>
+          </td>
+        </div>
+        <div>
+          <td style="width:40%; text-align: right">
+            <div class="col-sm-6 col-sm-offset-0 form-box">
+              <div class="form-bottom" style="width:100%">
+                <table ng-controller="coursesCtrl">
+                  <tr data-ng-repeat="c in courses | orderBy: 'abbrev'">
+                    <br></br>
+                    <td style="color:white">
+                      PRICE
+                    </td>
+                    <td style="color:white">
+                      REFUND
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </td>
+        </div>		
+			
+			

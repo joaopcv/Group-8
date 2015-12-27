@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>InSure </title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href='//fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src = "cwApp.js"> </script>
+  
+	<!--start-wrap-->
+			<!--start-header-->
+			<div class="header">
+				<div class="wrap">
+				<!--start-logo-->
+				<div class="logo">
+					<a href="index.html"><img src="C:\Dados\SISE 2015\Computacao Web\Projecto\cw\images\logotipo.png" title="logo" /></a>
+				</div>
+				<!--end-logo-->
+				<!--start-top-nav-->
+				<div class="top-nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="MedicalActs.html">Medical Act</a></li>
+						<li><a>Welcome Dr.{{doctorName}}</a></li>
+						<li><a style="cursor: pointer;" ng-click="loggedIn=false">Log out</a></li>
+						<li class="active"><a href="ClientList.html">ClientList</a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				<!--end-top-nav-->
+			</div>
+			<!--end-header-->
+	</head>	
+	<body>
+
+
+<table class="table">
+  
+  <tr>
+    <td width="35%" align = "left"> 
+		<div class="panel panel-primary" style="height=2 px;overflow-y: scroll;">
+			<div class="panel-heading">
+			<p><span class="glyphicon glyphicon-hourglass"></span><b> WAITING LIST</b></div>
+		</div>
+	  <div style="margin-top:4px" ng-controller="patientsCtrl">	
+	  <table class="table table-condensed">
+		<thead>
+		  <tr>
+			<th><center> Patient ID</th>
+			<th><center>Name</th>
+			<th><center>Policy Type</th>
+			<th><center>Waiting Time</th> 
+			<th><center> </th>
+		</thead>
+		</tr>
+			
+			<tr ng-repeat="patient in patients">
+			<td>{{patient.patID}}</td>
+			<td><a ng-href="ClientList.html?patId={{patient.patID}}">{{patient.name}}</td>
+		</tr>
+	  </table>
+	</div>
+	</div>
+	</td>
+
+    <td>
+	</td>
+    
+	<td width="60%" align = "left">
+		<div class="well">
+		<h3>      INSURANCE REQUESTS </h3>
+		
+		<p>
+		</p>
+  
+  <div class="panel-group">
+    <div class="panel panel-warning" style="max-height: 5 px;overflow-y: scroll;">
+      <div class="panel-heading">
+        
+		<h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1"> 
+			<p><span class="glyphicon glyphicon-alert"></span><b>  PENDING</b></div></a>
+        </h4>
+      
+      <div id="collapse1" class="panel-collapse collapse">
+        <table class="table table-condensed">
+		<thead>
+		  <tr style="width: 1 px;">
+			<th><center>ID</th>
+			<th><center>Name</th>
+			<th><center>Policy Number</th>
+			<th><center>Policy Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr style="width: 10 px;">
+			<td><center>1</td>
+			<td><center>Anna Pitt</td>
+			<td><center>1</td>
+			<td><center>2</td>
+		  </tr>
+		  <tr style="width: 10 px;">
+			<td><center>2</td>
+			<td><center>Luis Coelho</td>
+			<td><center>1</td>
+			<td><center>3</td>
+		  </tr>
+		  <tr style="width: 10 px;">
+			<td><center>3</td>
+			<td><center>Paula Matias</td>
+			<td><center>2</td>
+			<td><center>1</td>
+		  </tr>
+		</tbody>
+	  </table>
+      </div>
+	  </div>
+    </div>
+		
+	<p>
+	</p>
+	
+  <div class="panel-group">
+    <div class="panel panel-success" style="max-height: 5 px;overflow-y: scroll;">
+      <div class="panel-heading">
+        
+		<h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse2"> 
+			<p><span class="glyphicon glyphicon glyphicon-ok"></span><b> ACCEPTED</b></div></a>
+        </h4>
+      
+      <div id="collapse2" class="panel-collapse collapse">
+        <table class="table table-condensed">
+		<thead>
+		  <tr style="width: 1 px;">
+			<th><center>ID</th>
+			<th><center>Name</th>
+			<th><center>Policy Number</th>
+			<th><center>Policy Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr style="width: 10 px;">
+			<td><center>1</td>
+			<td><center>Anna Pitt</td>
+			<td><center>1</td>
+			<td><center>2</td>
+		  </tr>
+		  <tr style="width: 10 px;">
+			<td><center>2</td>
+			<td><center>Luis Coelho</td>
+			<td><center>1</td>
+			<td><center>3</td>
+		  </tr>
+		  <tr style="width: 10 px;">
+			<td><center>3</td>
+			<td><center>Paula Matias</td>
+			<td><center>2</td>
+			<td><center>1</td>
+		  </tr>
+		</tbody>
+	  </table>
+      </div>
+	  </div>
+    </div>
+
+	<p>
+	</p>
+  <div class="panel-group">
+    <div class="panel panel-danger" style="max-height: 5 px;overflow-y: scroll;">
+      <div class="panel-heading">
+        
+		<h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse3"> 
+			<p><span class="glyphicon glyphicon glyphicon-remove"></span><b> REJECTED</b></div></a>
+        </h4>
+      
+      <div id="collapse3" class="panel-collapse collapse">
+        <table class="table table-condensed">
+		<thead>
+		  <tr style="width: 1 px;">
+			<th><center>ID</th>
+			<th><center>Name</th>
+			<th><center>Policy Number</th>
+			<th><center>Policy Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr style="width: 10 px;">
+			<td><center>1</td>
+			<td><center>Anna Pitt</td>
+			<td><center>1</td>
+			<td><center>2</td>
+		  </tr>
+		  <tr style="width: 10 px;">
+			<td><center>2</td>
+			<td><center>Luis Coelho</td>
+			<td><center>1</td>
+			<td><center>3</td>
+		  </tr>
+		  <tr style="width: 10 px;">
+			<td><center>3</td>
+			<td><center>Paula Matias</td>
+			<td><center>2</td>
+			<td><center>1</td>
+		  </tr>
+		</tbody>
+	  </table>
+      </div>
+	  </div>
+    </div>
+
+</div>	
+    </td>
+
+</body>
+	
+	
+	</body>
+</html>
+
