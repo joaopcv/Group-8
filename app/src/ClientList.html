@@ -36,7 +36,7 @@
 			<!--end-header-->
 	</head>	
 	<body>
-
+	<div ng-app="cwApp" ng-controller="mainCtrl">
 
 <table class="table">
   
@@ -52,13 +52,10 @@
 		  <tr>
 			<th><center> Patient ID</th>
 			<th><center>Name</th>
-			<th><center>Policy Type</th>
-			<th><center>Waiting Time</th> 
 			<th><center> </th>
 		</thead>
 		</tr>
-			
-			<tr ng-repeat="patient in patients">
+			<tr ng-repeat="patient in patients" align="center">
 			<td>{{patient.patID}}</td>
 			<td><a ng-href="ClientList.html?patId={{patient.patID}}">{{patient.name}}</td>
 		</tr>
@@ -67,8 +64,24 @@
 	</div>
 	</td>
 
-    <td>
-	</td>
+	<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+
+    <div class="modal-content" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div>
+    
+	
+	
+	
+	
+	
+	
+	<!--Insurance Requests-->
     
 	<td width="60%" align = "left">
 		<div class="well">
